@@ -170,6 +170,58 @@
         color: var(--accent);
       }
 
+      .nav-menu-toggle {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: #fff;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .nav-menu-toggle span {
+        width: 20px;
+        height: 2px;
+        background: var(--steel);
+        border-radius: 999px;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+
+      .mobile-menu a {
+        display: block;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 10px 14px;
+        color: var(--steel);
+        background: #fff;
+      }
+
+      .mobile-menu .cta-primary {
+        justify-content: center;
+      }
+
+      .nav.mobile-open .nav-menu-toggle span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .nav.mobile-open .nav-menu-toggle span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav.mobile-open .nav-menu-toggle span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
       .cta-primary {
         background: var(--yard);
         color: #fff;
@@ -532,8 +584,26 @@
       }
 
       @media (max-width: 900px) {
+        .nav-inner {
+          padding: 12px 0;
+        }
+
         .nav-links {
           display: none;
+        }
+
+        .nav-menu-toggle {
+          display: inline-flex;
+        }
+
+        .nav-inner > .cta-primary {
+          display: none;
+        }
+
+        .nav.mobile-open .mobile-menu {
+          display: grid;
+          gap: 10px;
+          padding: 0 0 14px;
         }
 
         .sticky-call {
@@ -577,16 +647,16 @@
       </div>
     </div>
 
-    <nav class="nav">
+    <nav class="nav" id="site-nav">
       <div class="container nav-inner">
-        <div class="logo">
+        <a class="logo" href="index.html" aria-label="Retour a l'accueil">
           <!-- <div class="logo-mark">CP</div>
           <div>
             <strong>Couverture Puel</strong>
             <span>Couvreur Zingueur • Gard (30)</span>
           </div> -->
           <img src="./img/logo-nobg.png" alt="" />
-        </div>
+        </a>
         <div class="nav-links">
           <a href="#services">Services</a>
           <a href="#realisations">Réalisations</a>
@@ -597,6 +667,25 @@
         <a class="cta-primary" href="tel:+33614223444"
           >Appeler 06 14 22 34 44</a
         >
+        <button
+          class="nav-menu-toggle"
+          type="button"
+          aria-label="Ouvrir le menu de navigation"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="container mobile-menu" id="mobile-menu">
+        <a href="#services">Services</a>
+        <a href="#realisations">Realisations</a>
+        <a href="#reassurance">Reassurance</a>
+        <a href="#devis">Devis</a>
+        <a href="#zone">Zone</a>
+        <a class="cta-primary" href="tel:+33614223444">Appeler 06 14 22 34 44</a>
       </div>
     </nav>
 
@@ -1014,5 +1103,41 @@
     </footer>
 
     <a class="sticky-call" href="tel:+33614223444">Appel urgent</a>
+    <script>
+      (function () {
+        const nav = document.getElementById("site-nav");
+        const toggleButton = nav?.querySelector(".nav-menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const logoLink = nav?.querySelector(".logo");
+
+        if (!nav || !toggleButton || !mobileMenu) {
+          return;
+        }
+
+        const closeMenu = function () {
+          nav.classList.remove("mobile-open");
+          toggleButton.setAttribute("aria-expanded", "false");
+        };
+
+        toggleButton.addEventListener("click", function () {
+          const isOpen = nav.classList.toggle("mobile-open");
+          toggleButton.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        mobileMenu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", closeMenu);
+        });
+
+        if (logoLink) {
+          logoLink.addEventListener("click", closeMenu);
+        }
+
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 900) {
+            closeMenu();
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
