@@ -190,7 +190,9 @@
         height: 2px;
         background: var(--steel);
         border-radius: 999px;
-        transition: transform 0.2s ease, opacity 0.2s ease;
+        transition:
+          transform 0.2s ease,
+          opacity 0.2s ease;
       }
 
       .mobile-menu {
@@ -338,7 +340,7 @@
         border-radius: var(--radius);
         min-height: 320px;
         /* background: linear-gradient(120deg, #12243a, #2e4966); */
-        background-image: url('https://le-de.cdn-website.com/c6359476f40e40ddb1b93235d6373663/dms3rep/multi/opt/20210207_224154-1920w.jpg');
+        background-image: url("https://le-de.cdn-website.com/c6359476f40e40ddb1b93235d6373663/dms3rep/multi/opt/20210207_224154-1920w.jpg");
         background-size: cover;
         background-position-y: 30%;
         color: #fff;
@@ -445,7 +447,9 @@
 
       .gallery-item {
         border-radius: 16px;
-        background: linear-gradient(135deg, #1b2c42, #284b6d);
+        /* background: linear-gradient(135deg, #1b2c42, #284b6d); */
+        background-image: url("https://images.unsplash.com/photo-1548346835-0345c02743f2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5maWx0cmF0aW9uJTIwdG9pdHxlbnwwfHwwfHx8Mg%3D%3D");
+        background-size: cover;
         min-height: 200px;
         color: #fff;
         padding: 16px;
@@ -462,6 +466,21 @@
         padding: 4px 8px;
         border-radius: 999px;
         font-size: 0.75rem;
+      }
+
+      .gallery-item:nth-child(2) {
+        background-image: url("https://images.unsplash.com/photo-1770910452211-2e8fd91bc347?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8emluZ3VlcmllfGVufDB8fDB8fHwy");
+        background-size: cover;
+      }
+
+      .gallery-item:nth-child(3) {
+        background-image: url("https://images.unsplash.com/photo-1737116748146-a6be49d6cb54?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aXNvbGF0aW9uJTIwY29tYmxlc3xlbnwwfHwwfHx8Mg%3D%3D");
+        background-size: cover;
+      }
+
+      .gallery-item:nth-child(4) {
+        background-image: url("https://images.unsplash.com/photo-1686327714181-43435553b59f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdvdXR0aSVDMyVBOHJlcyUyMGNvdXZyZXVyfGVufDB8fDB8fHwy");
+        background-size: cover;
       }
 
       .reviews {
@@ -685,7 +704,9 @@
         <a href="#reassurance">Reassurance</a>
         <a href="#devis">Devis</a>
         <a href="#zone">Zone</a>
-        <a class="cta-primary" href="tel:+33614223444">Appeler 06 14 22 34 44</a>
+        <a class="cta-primary" href="tel:+33614223444"
+          >Appeler 06 14 22 34 44</a
+        >
       </div>
     </nav>
 
