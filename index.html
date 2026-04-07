@@ -228,7 +228,7 @@
         background: var(--yard);
         color: #fff;
         padding: 12px 20px;
-        border-radius: 999px;
+        /* border-radius: 999px; */
         font-weight: 600;
         border: none;
         display: inline-flex;
@@ -244,13 +244,13 @@
       .cta-outline {
         border: 1px solid var(--line);
         padding: 10px 18px;
-        border-radius: 999px;
+        /* border-radius: 999px; */
         font-weight: 600;
-        color: var(--steel);
+        color: var(--chalk);
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: #fff;
+        background: var(--accent);
       }
 
       .hero {
@@ -302,7 +302,7 @@
       .badge {
         background: #fff;
         border: 1px solid var(--line);
-        border-radius: 999px;
+        /* border-radius: 999px; */
         padding: 8px 14px;
         font-size: 0.88rem;
         display: inline-flex;
@@ -450,11 +450,24 @@
         /* background: linear-gradient(135deg, #1b2c42, #284b6d); */
         background-image: url("https://images.unsplash.com/photo-1548346835-0345c02743f2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5maWx0cmF0aW9uJTIwdG9pdHxlbnwwfHwwfHx8Mg%3D%3D");
         background-size: cover;
+        /* opacity: 0.5; */
         min-height: 200px;
         color: #fff;
         padding: 16px;
         position: relative;
         overflow: hidden;
+      }
+
+      .gallery-item p {
+        margin: 0;
+        color: var(--line);
+        font-size: .9rem;
+      }
+
+      .gallery-text-bg {
+        background: rgba(0, 0, 0, 0.455);
+        padding: 0.5rem;
+        margin: -1rem;
       }
 
       .gallery-item::after {
@@ -594,7 +607,7 @@
         background: var(--accent);
         color: #fff;
         padding: 12px 18px;
-        border-radius: 999px;
+        /* border-radius: 999px; */
         box-shadow: 0 12px 24px rgba(12, 30, 60, 0.28);
         display: none;
         align-items: center;
@@ -762,7 +775,7 @@
               isolation, vieillissement de toiture, étanchéité ou urgence.
             </p>
           </div>
-          <a class="cta-outline" href="#devis">Recevoir un devis rapide</a>
+          <a class="cta-primary" href="#devis">Recevoir un devis rapide</a>
         </div>
         <div class="grid-3">
           <article class="card" data-field="service_couverture">
@@ -861,20 +874,28 @@
         </div>
         <div class="gallery">
           <div class="gallery-item">
-            <h3>Réfection tuiles canal • Nîmes</h3>
-            <p>Avant : infiltration • Après : toiture étanche</p>
+            <div class="gallery-text-bg">
+              <h3>Réfection tuiles canal • Nîmes</h3>
+              <p>Avant : infiltration • Après : toiture étanche</p>
+            </div>
           </div>
           <div class="gallery-item">
-            <h3>Zinguerie cheminée • Marguerittes</h3>
-            <p>Étanchéité complète & solins neufs</p>
+            <div class="gallery-text-bg">
+              <h3>Zinguerie cheminée • Marguerittes</h3>
+              <p>Étanchéité complète & solins neufs</p>
+            </div>
           </div>
           <div class="gallery-item">
-            <h3>Isolation combles • Caissargues</h3>
-            <p>Soufflage laine de roche</p>
+            <div class="gallery-text-bg">
+              <h3>Isolation combles • Caissargues</h3>
+              <p>Soufflage laine de roche</p>
+            </div>
           </div>
           <div class="gallery-item">
-            <h3>Gouttières zinc • Bouillargues</h3>
-            <p>Écoulement optimisé</p>
+            <div class="gallery-text-bg">
+              <h3>Gouttières zinc • Bouillargues</h3>
+              <p>Écoulement optimisé</p>
+            </div>
           </div>
         </div>
       </div>
